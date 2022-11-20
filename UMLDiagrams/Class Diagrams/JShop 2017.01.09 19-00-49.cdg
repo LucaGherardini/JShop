@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="JShop">
+  <ClassDiagramComponents>
+    <Class name="Tabella" package="jshop.tabelle" visibility="public" isAbstract="true" xPosition="1091.0" yPosition="82.0">
+      <Fields>
+        <Field name="c" type="Catalogo" visibility="private" isFinal="true"/>
+        <Field name="colNames" type="String[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String[]" name="colNames"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getColumnName" returnType="String" visibility="public">
+          <Argument type="int" name="col"/>
+        </Method>
+        <Method name="getRowCount" returnType="int" visibility="public"/>
+        <Method name="getColumnCount" returnType="int" visibility="public"/>
+        <Method name="getValueAt" returnType="Object" visibility="public">
+          <Argument type="int" name="rowIndex"/>
+          <Argument type="int" name="columnIndex"/>
+        </Method>
+        <Method name="isCellEditable" returnType="boolean" visibility="public">
+          <Argument type="int" name="row"/>
+          <Argument type="int" name="col"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TabellaAdmin" package="jshop.tabelle" visibility="public" xPosition="1091.0" yPosition="488.0">
+      <Fields>
+        <Field name="c" type="Catalogo" visibility="private" isFinal="true"/>
+        <Field name="jbPromozione" type="JButton" visibility="private" isFinal="true"/>
+        <Field name="rowEv" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getValueAt" returnType="Object" visibility="public">
+          <Argument type="int" name="rowIndex"/>
+          <Argument type="int" name="columnIndex"/>
+        </Method>
+        <Method name="actionPerformed" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="e"/>
+        </Method>
+        <Method name="setRow" returnType="void" visibility="public">
+          <Argument type="int" name="row"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TabellaCarrello" package="jshop.tabelle" visibility="public" xPosition="519.0" yPosition="488.0">
+      <Fields>
+        <Field name="car" type="Carrello" visibility="private" isFinal="true"/>
+        <Field name="jbRimuovi" type="JButton" visibility="private" isFinal="true"/>
+        <Field name="row" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getRowCount" returnType="int" visibility="public"/>
+        <Method name="getValueAt" returnType="Object" visibility="public">
+          <Argument type="int" name="rowIndex"/>
+          <Argument type="int" name="columnIndex"/>
+        </Method>
+        <Method name="setRow" returnType="void" visibility="public">
+          <Argument type="int" name="row"/>
+        </Method>
+        <Method name="actionPerformed" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="e"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TabellaCliente" package="jshop.tabelle" visibility="public" xPosition="1542.0" yPosition="488.0">
+      <Fields>
+        <Field name="c" type="Catalogo" visibility="private" isFinal="true"/>
+        <Field name="jbAcquista" type="JButton" visibility="private" isFinal="true"/>
+        <Field name="row" type="int" visibility="private"/>
+        <Field name="fc" type="FinestraCarrello" visibility="private"/>
+        <Field name="field" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getValueAt" returnType="Object" visibility="public">
+          <Argument type="int" name="rowIndex"/>
+          <Argument type="int" name="columnIndex"/>
+        </Method>
+        <Method name="actionPerformed" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="e"/>
+        </Method>
+        <Method name="setRow" returnType="void" visibility="public">
+          <Argument type="int" name="row"/>
+        </Method>
+        <Method name="setFinestra" returnType="void" visibility="public">
+          <Argument type="FinestraCarrello" name="fc"/>
+        </Method>
+        <Method name="setField" returnType="void" visibility="public">
+          <Argument type="String" name="field"/>
+        </Method>
+        <Method name="setSearch" returnType="void" visibility="public">
+          <Argument type="String" name="search"/>
+        </Method>
+        <Method name="setCategoria" returnType="void" visibility="public">
+          <Argument type="String" name="categoria"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AcquistoTrePerDue" package="jshop.prodotti" visibility="public" xPosition="1455.0" yPosition="1931.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Prodotto" name="p"/>
+          <Argument type="int" name="quantita"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getSaldo" returnType="float" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Catalogo" package="jshop.prodotti" visibility="public" xPosition="1441.0" yPosition="1164.0">
+      <Fields>
+        <Field name="SerialVersionUID" type="long" visibility="private" isFinal="true"/>
+        <Field name="c" type="Catalogo" visibility="private" isStatic="true"/>
+        <Field name="ultimoSalvataggio" type="String" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="getCatalogo" returnType="Catalogo" visibility="public" isStatic="true"/>
+        <Method name="salva" returnType="void" visibility="public">
+          <Argument type="String" name="file"/>
+        </Method>
+        <Method name="carica" returnType="void" visibility="public">
+          <Argument type="String" name="file"/>
+        </Method>
+        <Method name="caricamentoAutomatico" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Acquisto" package="jshop.prodotti" visibility="public" xPosition="1813.0" yPosition="1647.0">
+      <Fields>
+        <Field name="quantita" type="int" visibility="private"/>
+        <Field name="p" type="Prodotto" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Prodotto" name="p"/>
+          <Argument type="int" name="quantita"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setQuantita" returnType="void" visibility="public">
+          <Argument type="int" name="quantita"/>
+        </Method>
+        <Method name="getQuantita" returnType="int" visibility="public"/>
+        <Method name="getPromozione" returnType="Prodotto.Promozioni" visibility="public"/>
+        <Method name="getSconto" returnType="int" visibility="public"/>
+        <Method name="getPrezzo" returnType="float" visibility="public"/>
+        <Method name="getNome" returnType="String" visibility="public" isFinal="true"/>
+        <Method name="getMarca" returnType="String" visibility="public" isFinal="true"/>
+        <Method name="getCodice" returnType="String" visibility="public" isFinal="true"/>
+        <Method name="getCategoria" returnType="String" visibility="public" isFinal="true"/>
+        <Method name="getImmagine" returnType="String" visibility="public" isFinal="true"/>
+        <Method name="toString" returnType="String" visibility="public" isFinal="true"/>
+        <Method name="getSaldo" returnType="float" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ListaProdotti" package="jshop.prodotti" visibility="public" xPosition="1151.0" yPosition="943.0">
+      <Fields>
+        <Field name="elenco" type="List&lt;E&gt;" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="aggiungiElemento" returnType="void" visibility="public">
+          <Argument type="E" name="p"/>
+        </Method>
+        <Method name="rimuoviElemento" returnType="void" visibility="public">
+          <Argument type="int" name="pos"/>
+        </Method>
+        <Method name="getSize" returnType="int" visibility="public"/>
+        <Method name="getElemento" returnType="E" visibility="public">
+          <Argument type="int" name="pos"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Carrello" package="jshop.prodotti" visibility="public" xPosition="557.0" yPosition="1147.0">
+      <Fields>
+        <Field name="c" type="Carrello" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="getCarrello" returnType="Carrello" visibility="public" isStatic="true"/>
+        <Method name="svuotaCarrello" returnType="void" visibility="public">
+          <Argument type="TabellaCarrello" name="tm"/>
+          <Argument type="String" name="mex"/>
+        </Method>
+        <Method name="svuotaLista" returnType="void" visibility="public">
+          <Argument type="TabellaCarrello" name="tm"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Prodotto" package="jshop.prodotti" visibility="public" xPosition="680.0" yPosition="1581.0">
+      <Fields>
+        <Field name="nome" type="String" visibility="private"/>
+        <Field name="promo" type="Promozioni" visibility="private"/>
+        <Field name="prezzo" type="float" visibility="private"/>
+        <Field name="sconto" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nome"/>
+          <Argument type="String" name="marca"/>
+          <Argument type="String" name="codice"/>
+          <Argument type="String" name="categoria"/>
+          <Argument type="String" name="immagine"/>
+          <Argument type="float" name="prezzo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setNome" returnType="void" visibility="public" isFinal="true">
+          <Argument type="String" name="nome"/>
+        </Method>
+        <Method name="setMarca" returnType="void" visibility="public" isFinal="true">
+          <Argument type="String" name="marca"/>
+        </Method>
+        <Method name="setCodice" returnType="void" visibility="public" isFinal="true">
+          <Argument type="String" name="codice"/>
+        </Method>
+        <Method name="setCategoria" returnType="void" visibility="public" isFinal="true">
+          <Argument type="String" name="categoria"/>
+        </Method>
+        <Method name="setImmagine" returnType="void" visibility="public" isFinal="true">
+          <Argument type="String" name="immagine"/>
+        </Method>
+        <Method name="setPrezzo" returnType="void" visibility="public" isFinal="true">
+          <Argument type="float" name="prezzo"/>
+        </Method>
+        <Method name="setPromozione" returnType="void" visibility="public" isFinal="true">
+          <Argument type="Promozioni" name="p"/>
+        </Method>
+        <Method name="setSconto" returnType="void" visibility="public" isFinal="true">
+          <Argument type="int" name="sconto"/>
+        </Method>
+        <Method name="getNome" returnType="String" visibility="public" isFinal="true"/>
+        <Method name="getMarca" returnType="String" visibility="public" isFinal="true"/>
+        <Method name="getCodice" returnType="String" visibility="public" isFinal="true"/>
+        <Method name="getCategoria" returnType="String" visibility="public" isFinal="true"/>
+        <Method name="getImmagine" returnType="String" visibility="public" isFinal="true"/>
+        <Method name="getPrezzo" returnType="float" visibility="public" isFinal="true"/>
+        <Method name="getPromozione" returnType="Promozioni" visibility="public" isFinal="true"/>
+        <Method name="getSconto" returnType="int" visibility="public" isFinal="true"/>
+        <Method name="toString" returnType="String" visibility="public" isFinal="true"/>
+      </Methods>
+    </Class>
+    <Class name="AcquistoScontato" package="jshop.prodotti" visibility="public" xPosition="2172.0" yPosition="1931.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Prodotto" name="p"/>
+          <Argument type="int" name="quantita"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getSaldo" returnType="float" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="JShop" package="jshop" visibility="public" xPosition="4.0" yPosition="1694.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FinestraAmministratore" package="jshop.finestre" visibility="public" xPosition="1710.0" yPosition="233.0">
+      <Fields>
+        <Field name="b" type="JPanel" visibility="private" isFinal="true"/>
+        <Field name="mgrB" type="LayoutManager" visibility="private" isFinal="true"/>
+        <Field name="jbAggiungiProdotto" type="JButton" visibility="private" isFinal="true"/>
+        <Field name="jfcFileLista" type="JFileChooser" visibility="private" isFinal="true"/>
+        <Field name="filter" type="FileNameExtensionFilter" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="actionPerformed" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="e"/>
+        </Method>
+        <Method name="impostaTabella" returnType="void" visibility="protected" isFinal="true"/>
+        <Method name="getRenderer" returnType="Component" visibility="protected"/>
+      </Methods>
+    </Class>
+    <Class name="FinestraErrore" package="jshop.finestre" visibility="public" xPosition="4.0" yPosition="1275.0">
+      <Fields>
+        <Field name="jlErrore" type="JLabel" visibility="private" isFinal="true"/>
+        <Field name="p" type="JPanel" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="mex"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="FinestraPromozione" package="jshop.finestre" visibility="public" xPosition="785.0" yPosition="780.0">
+      <Fields>
+        <Field name="jrbNessuna" type="JRadioButton" visibility="private" isFinal="true"/>
+        <Field name="bgOpzioni" type="ButtonGroup" visibility="private" isFinal="true"/>
+        <Field name="jtfSconto" type="JTextField" visibility="private" isFinal="true"/>
+        <Field name="p" type="JPanel" visibility="private" isFinal="true"/>
+        <Field name="jbOk" type="JButton" visibility="private" isFinal="true"/>
+        <Field name="row" type="int" visibility="private" isFinal="true"/>
+        <Field name="tm" type="TabellaAdmin" visibility="private" isFinal="true"/>
+        <Field name="c" type="Catalogo" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="row"/>
+          <Argument type="TabellaAdmin" name="tm"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="actionPerformed" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="e"/>
+        </Method>
+        <Method name="stateChanged" returnType="void" visibility="public">
+          <Argument type="ChangeEvent" name="e"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FinestraAccesso" package="jshop.finestre" visibility="public" xPosition="4.0" yPosition="1466.0">
+      <Fields>
+        <Field name="p" type="JPanel" visibility="private" isFinal="true"/>
+        <Field name="mgr" type="LayoutManager" visibility="private" isFinal="true"/>
+        <Field name="jlMessaggio" type="JLabel" visibility="private" isFinal="true"/>
+        <Field name="jbAdmin" type="JButton" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="actionPerformed" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="e"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FinestraCarrello" package="jshop.finestre" visibility="public" xPosition="2049.0" yPosition="582.0">
+      <Fields>
+        <Field name="jbRimuovi" type="JButton" visibility="private" isFinal="true"/>
+        <Field name="p" type="JPanel" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="impostaTabella" returnType="void" visibility="protected" isFinal="true"/>
+        <Method name="getRenderer" returnType="Component" visibility="protected"/>
+        <Method name="aggiornaTabella" returnType="void" visibility="public"/>
+        <Method name="actionPerformed" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="e"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FinestraCheckOut" package="jshop.finestre" visibility="public" xPosition="4.0" yPosition="635.0">
+      <Fields>
+        <Field name="jbOk" type="JButton" visibility="private" isFinal="true"/>
+        <Field name="jlNome" type="JLabel" visibility="private" isFinal="true"/>
+        <Field name="jtfNome" type="JTextField" visibility="private" isFinal="true"/>
+        <Field name="bg" type="ButtonGroup" visibility="private" isFinal="true"/>
+        <Field name="jrbCartaDiCredito" type="JRadioButton" visibility="private" isFinal="true"/>
+        <Field name="p" type="JPanel" visibility="private" isFinal="true"/>
+        <Field name="tm" type="TabellaCarrello" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="TabellaCarrello" name="tm"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="actionPerformed" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="e"/>
+        </Method>
+        <Method name="controllaCampi" returnType="boolean" visibility="public"/>
+        <Method name="controllaIndirizzo" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FinestraEliminazione" package="jshop.finestre" visibility="public" xPosition="-27.0" yPosition="992.0">
+      <Fields>
+        <Field name="row" type="int" visibility="private" isFinal="true"/>
+        <Field name="c" type="ListaProdotti&lt;E&gt;" visibility="private" isFinal="true"/>
+        <Field name="tm" type="AbstractTableModel" visibility="private" isFinal="true"/>
+        <Field name="jlMex" type="JLabel" visibility="private" isFinal="true"/>
+        <Field name="jbConferma" type="JButton" visibility="private" isFinal="true"/>
+        <Field name="p" type="JPanel" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="row"/>
+          <Argument type="AbstractTableModel" name="tabella"/>
+          <Argument type="ListaProdotti&lt;E&gt;" name="c"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="actionPerformed" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="e"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FinestraUtente" package="jshop.finestre" visibility="public" isAbstract="true" xPosition="2009.0" yPosition="20.0">
+      <Fields>
+        <Field name="p" type="JPanel" visibility="private" isFinal="true"/>
+        <Field name="mgr" type="LayoutManager" visibility="private" isFinal="true"/>
+        <Field name="jtTabella" type="JTable" visibility="protected"/>
+        <Field name="jspTab" type="JScrollPane" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nomeFinestra"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="impostaTabella" returnType="void" visibility="protected"/>
+        <Method name="getRenderer" returnType="Component" visibility="protected"/>
+      </Methods>
+    </Class>
+    <Class name="FinestraCompra" package="jshop.finestre" visibility="public" xPosition="1644.0" yPosition="1401.0">
+      <Fields>
+        <Field name="jlNomeProdotto" type="JLabel" visibility="private" isFinal="true"/>
+        <Field name="jtfQuantita" type="JTextField" visibility="private" isFinal="true"/>
+        <Field name="p" type="JPanel" visibility="private" isFinal="true"/>
+        <Field name="jbCompra" type="JButton" visibility="private" isFinal="true"/>
+        <Field name="row" type="int" visibility="private" isFinal="true"/>
+        <Field name="c" type="Catalogo" visibility="private" isFinal="true"/>
+        <Field name="fc" type="FinestraCarrello" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="row"/>
+          <Argument type="FinestraCarrello" name="fc"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="actionPerformed" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="e"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FinestraSvuotaCarrello" package="jshop.finestre" visibility="public" xPosition="290.0" yPosition="780.0">
+      <Fields>
+        <Field name="jlMex" type="JLabel" visibility="private" isFinal="true"/>
+        <Field name="jbConferma" type="JButton" visibility="private" isFinal="true"/>
+        <Field name="p" type="JPanel" visibility="private" isFinal="true"/>
+        <Field name="c" type="Carrello" visibility="private" isFinal="true"/>
+        <Field name="tm" type="TabellaCarrello" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Carrello" name="c"/>
+          <Argument type="TabellaCarrello" name="tm"/>
+          <Argument type="String" name="mex"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="actionPerformed" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="e"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FinestraProdotto" package="jshop.finestre" visibility="public" xPosition="2009.0" yPosition="1196.0">
+      <Fields>
+        <Field name="jlNome" type="JLabel" visibility="private" isFinal="true"/>
+        <Field name="jtfNome" type="JTextField" visibility="private" isFinal="true"/>
+        <Field name="jcbCategoria" type="JComboBox" visibility="private" isFinal="true"/>
+        <Field name="jbInserimento" type="JButton" visibility="private" isFinal="true"/>
+        <Field name="p" type="JPanel" visibility="private" isFinal="true"/>
+        <Field name="tm" type="TabellaAdmin" visibility="private" isFinal="true"/>
+        <Field name="dialog" type="JFrame" visibility="private"/>
+        <Field name="jfcImmagine" type="JFileChooser" visibility="private" isFinal="true"/>
+        <Field name="filename" type="JTextField" visibility="private" isFinal="true"/>
+        <Field name="filter" type="FileNameExtensionFilter" visibility="private" isFinal="true"/>
+        <Field name="index" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="TabellaAdmin" name="tm"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="fillFields" returnType="void" visibility="protected">
+          <Argument type="String" name="nome"/>
+          <Argument type="String" name="marca"/>
+          <Argument type="String" name="codice"/>
+          <Argument type="float" name="prezzo"/>
+          <Argument type="String" name="categoria"/>
+          <Argument type="String" name="immagine"/>
+          <Argument type="int" name="row"/>
+        </Method>
+        <Method name="caricaCategorie" returnType="void" visibility="public" isFinal="true"/>
+        <Method name="checkFields" returnType="boolean" visibility="public"/>
+        <Method name="checkCodice" returnType="boolean" visibility="public"/>
+        <Method name="raccoltaDati" returnType="Prodotto" visibility="public"/>
+        <Method name="actionPerformed" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="e"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FinestraCliente" package="jshop.finestre" visibility="public" xPosition="2322.0" yPosition="233.0">
+      <Fields>
+        <Field name="jbAcquista" type="JButton" visibility="private" isFinal="true"/>
+        <Field name="jlRicerca" type="JLabel" visibility="private" isFinal="true"/>
+        <Field name="dialog" type="JFrame" visibility="private"/>
+        <Field name="jtfRicerca" type="JTextField" visibility="private" isFinal="true"/>
+        <Field name="jrbNome" type="JRadioButton" visibility="private" isFinal="true"/>
+        <Field name="jcbCategoria" type="JComboBox" visibility="private" isFinal="true"/>
+        <Field name="fc" type="FinestraCarrello" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="actionPerformed" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="e"/>
+        </Method>
+        <Method name="ricerca" returnType="void" visibility="public"/>
+        <Method name="filtra" returnType="void" visibility="public"/>
+        <Method name="getRowFilter" returnType="RowFilter" visibility="private"/>
+        <Method name="caricaCategorie" returnType="void" visibility="public" isFinal="true"/>
+        <Method name="impostaTabella" returnType="void" visibility="protected" isFinal="true"/>
+        <Method name="getRenderer" returnType="Component" visibility="protected"/>
+        <Method name="stateChanged" returnType="void" visibility="public">
+          <Argument type="ChangeEvent" name="e"/>
+        </Method>
+        <Method name="changedUpdate" returnType="void" visibility="public">
+          <Argument type="DocumentEvent" name="e"/>
+        </Method>
+        <Method name="insertUpdate" returnType="void" visibility="public">
+          <Argument type="DocumentEvent" name="e"/>
+        </Method>
+        <Method name="removeUpdate" returnType="void" visibility="public">
+          <Argument type="DocumentEvent" name="e"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FinestraModifica" package="jshop.finestre" visibility="public" xPosition="2172.0" yPosition="905.0">
+      <Fields>
+        <Field name="c" type="Catalogo" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="rowEv"/>
+          <Argument type="TabellaAdmin" name="tm"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="fc" source="jshop.finestre.FinestraCliente" target="jshop.finestre.FinestraCarrello" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="c" source="jshop.tabelle.TabellaAdmin" target="jshop.prodotti.Catalogo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="c" source="jshop.prodotti.Carrello" target="jshop.prodotti.Carrello" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="c" source="jshop.finestre.FinestraSvuotaCarrello" target="jshop.prodotti.Carrello" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="jshop.prodotti.Carrello" target="jshop.prodotti.ListaProdotti"/>
+    <IsRelation name="is" source="jshop.finestre.FinestraAmministratore" target="jshop.finestre.FinestraUtente"/>
+    <HasRelation name="tm" source="jshop.finestre.FinestraCheckOut" target="jshop.tabelle.TabellaCarrello" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="c" source="jshop.finestre.FinestraModifica" target="jshop.prodotti.Catalogo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="p" source="jshop.prodotti.Acquisto" target="jshop.prodotti.Prodotto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jshop.prodotti.Carrello" target="jshop.prodotti.Carrello" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="jshop.tabelle.TabellaCarrello" target="jshop.tabelle.Tabella"/>
+    <IsRelation name="is" source="jshop.finestre.FinestraCliente" target="jshop.finestre.FinestraUtente"/>
+    <HasRelation name="c" source="jshop.finestre.FinestraPromozione" target="jshop.prodotti.Catalogo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="c" source="jshop.tabelle.Tabella" target="jshop.prodotti.Catalogo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="jshop.finestre.FinestraCarrello" target="jshop.finestre.FinestraUtente"/>
+    <UseRelation source="jshop.tabelle.TabellaCliente" target="jshop.finestre.FinestraCarrello" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jshop.prodotti.Catalogo" target="jshop.prodotti.Catalogo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jshop.prodotti.Acquisto" target="jshop.prodotti.Prodotto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="c" source="jshop.prodotti.Catalogo" target="jshop.prodotti.Catalogo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="jshop.prodotti.AcquistoTrePerDue" target="jshop.prodotti.Acquisto"/>
+    <IsRelation name="is" source="jshop.finestre.FinestraModifica" target="jshop.finestre.FinestraProdotto"/>
+    <IsRelation name="is" source="jshop.prodotti.AcquistoScontato" target="jshop.prodotti.Acquisto"/>
+    <IsRelation name="is" source="jshop.tabelle.TabellaAdmin" target="jshop.tabelle.Tabella"/>
+    <HasRelation name="tm" source="jshop.finestre.FinestraSvuotaCarrello" target="jshop.tabelle.TabellaCarrello" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tm" source="jshop.finestre.FinestraPromozione" target="jshop.tabelle.TabellaAdmin" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="jshop.tabelle.TabellaCliente" target="jshop.tabelle.Tabella"/>
+    <IsRelation name="is" source="jshop.prodotti.Catalogo" target="jshop.prodotti.ListaProdotti"/>
+    <HasRelation name="tm" source="jshop.finestre.FinestraProdotto" target="jshop.tabelle.TabellaAdmin" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="c" source="jshop.finestre.FinestraCompra" target="jshop.prodotti.Catalogo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="fc" source="jshop.finestre.FinestraCompra" target="jshop.finestre.FinestraCarrello" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jshop.finestre.FinestraProdotto" target="jshop.prodotti.Prodotto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="fc" source="jshop.tabelle.TabellaCliente" target="jshop.finestre.FinestraCarrello" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="car" source="jshop.tabelle.TabellaCarrello" target="jshop.prodotti.Carrello" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="c" source="jshop.tabelle.TabellaCliente" target="jshop.prodotti.Catalogo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
